@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご予約｜森のキッチン</title>
+</head>
+
+<body>
+
+  <!-- ========================================== -->
+  <!-- 【全ページ共通】サイトロゴ -->
+  <!-- ========================================== -->
+
+  <a href="index.html"><img src="images/logo.png" alt="森のキッチン ロゴ"></a>
+
+
+  <!-- ========================================== -->
+  <!-- 【ページ見出し】 -->
+  <!-- ========================================== -->
+
+  <h1>ご予約</h1>
+
+  <p>森のキッチンへのご予約は、このページの下部にあるフォームからお受けしています。ご来店の3日前までにご予約をお願いいたします。</p>
+
+  <p><a href="index.html">トップページに戻る</a></p>
+
+
+  <!-- ========================================== -->
+  <!-- 【①】営業時間表（table・colspan・rowspan） -->
+  <!-- ========================================== -->
+
+  <h2>営業時間のご案内</h2>
+
+  <table border="1">
+    <tr>
+      <th>曜日</th>
+      <th>ランチタイム</th>
+      <th>ディナータイム</th>
+      <th>備考</th>
+    </tr>
+    <tr>
+      <td>月曜日</td>
+      <td>11:00 〜 14:30</td>
+      <td>17:30 〜 21:00</td>
+      <td>－</td>
+    </tr>
+    <tr>
+      <td>火曜日</td>
+      <td>11:00 〜 14:30</td>
+      <td>17:30 〜 21:00</td>
+      <td>－</td>
+    </tr>
+    <tr>
+      <td>水曜日</td>
+      <td colspan="2">定休日</td>
+      <td>－</td>
+    </tr>
+    <tr>
+      <td>木曜日</td>
+      <td>11:00 〜 14:30</td>
+      <td>17:30 〜 21:00</td>
+      <td>－</td>
+    </tr>
+    <tr>
+      <td>金曜日</td>
+      <td>11:00 〜 14:30</td>
+      <td>17:30 〜 22:00</td>
+      <td>金曜日は夜遅めまで営業</td>
+    </tr>
+    <tr>
+      <td>土曜日</td>
+      <td>10:00 〜 15:00</td>
+      <td>17:30 〜 22:00</td>
+      <td rowspan="2">土日はモーニング営業あり（10:00開店）</td>
+    </tr>
+    <tr>
+      <td>日曜日</td>
+      <td>10:00 〜 15:00</td>
+      <td>17:30 〜 21:00</td>
+    </tr>
+  </table>
+
+
+  <!-- ========================================== -->
+  <!-- 【②】ご予約フォーム -->
+  <!-- form / input(text,email,tel,date,number,radio,checkbox,submit) -->
+  <!-- textarea / select / option / label -->
+  <!-- ========================================== -->
+
+  <h2>ご予約フォーム</h2>
+
+  <p>お席の確保のため、以下の項目をご入力ください。</p>
+
+  <form action="/reservation" method="get">
+
+    <p>
+      <label for="name">お名前</label><br>
+      <input type="text" id="name" name="name" placeholder="森 太郎">
+    </p>
+
+    <p>
+      <label for="email">メールアドレス</label><br>
+      <input type="email" id="email" name="email" placeholder="your@example.com">
+    </p>
+
+    <p>
+      <label for="tel">電話番号</label><br>
+      <input type="tel" id="tel" name="tel" placeholder="090-1234-5678">
+    </p>
+
+    <p>
+      <label for="date">ご予約希望日</label><br>
+      <input type="date" name="date" id="date">
+    </p>
+
+    <p>
+      <label for="guest">ご人数</label><br>
+      <input type="number" name="guest" id="guest" min="1" max="10" value="2">名
+    </p>
+
+    <p>ご利用時間帯</p>
+    <p>
+      <input type="radio" id="time-lunch" name="time" value="lunch" checked>
+      <label for="time-lunch">ランチタイム（11:00〜14:30）</label><br>
+
+      <input type="radio" id="time-dinner" name="time" value="dinner">
+      <label for="time-dinner">ディナータイム（17:30〜21:00）</label>
+    </p>
+
+    <p>アレルギー対応が必要な食材（複数選択可）</p>
+
+    <p>
+
+      <input type="checkbox" id="allergy-wheat" name="allergy" value="小麦">
+      <label for="allergy-wheat">小麦</label>
+
+      <input type="checkbox" id="allergy-dairy" name="allergy" value="乳製品">
+      <label for="allergy-dairy">乳製品</label>
+
+      <input type="checkbox" id="allergy-egg" name="allergy" value="卵">
+      <label for="allergy-egg">卵</label>
+
+      <input type="checkbox" id="allergy-nuts" name="allergy" value="ナッツ類">
+      <label for="allergy-nuts">ナッツ類</label>
+
+    </p>
+
+    <p>
+      <label for="course">ご希望のコース</label><br>
+      <select id="course" name="course">
+        <option value="undecided" selected>お決まりでない</option>
+        <option value="lunch-a">ランチAコース（季節の野菜プレート）</option>
+        <option value="lunch-b">ランチBコース（自家製グラノーラボウル）</option>
+        <option value="dinner">ディナーコース（前菜・メイン・デザート）</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="message">ご要望・お問い合わせ</label><br>
+      <textarea id="message" name="message" rows="5" placeholder="誕生日のサプライズ希望、お子様連れ、など"></textarea>
+    </p>
+
+
+    <p><input type="submit" value="予約を送信する"></p>
+
+  </form>
+
+</body>
+
+</html>

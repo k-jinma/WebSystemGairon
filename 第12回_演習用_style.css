@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+/* ==========================================
+   第11回 完成コード：ボックスモデルと余白の調整
+   森のキッチン LP（index.html）用 スタイルシート
+   - 第10回までの「色」と「背景」に、第11回で扱う
+     「width / height / max-width / margin / padding / border」
+     を追加した状態。
+   - クラスセレクター（.name）、IDセレクター（#name）、
+     list-style 系プロパティは第12回で扱う。
+   ========================================== */
+
+
+/* ----------------------------------------
+   配色設計（第10回までと同じ。第11回で追加した色は #1b5e20 と #ffb300、
+   および枠線用の #e6e1ce）
+     ベースカラー（70%）  #fdfcf7
+     メインカラー（25%）  #2e7d32
+     メインカラー（濃）   #1b5e20   ←ヘッダーの濃い緑
+     サブカラー　         #5d4037
+     サブカラー（淡）     #f5efde
+     アクセントカラー     #ffb300   ←ヘッダー／フッター下の帯
+     枠線用ベージュ       #e6e1ce
+   ---------------------------------------- */
+
+
+/* ----- 全体（body） ----- */
+body {
+  margin: 0;
+  color: #333;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  background-color: #fdfcf7;
+}
+
+
+/* ----- h1（キャッチコピー） ----- */
+h1 {
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.4;
+  text-align: center;
+  color: #2e7d32;
+  margin: 0;
+}
+
+
+/* ----- h2（セクション見出し）：下線つきの中央寄せタイトル ----- */
+h2 {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.5;
+  text-align: center;
+  color: #2e7d32;
+  margin: 0 auto 24px auto;
+  padding: 0 0 12px 0;
+  border-bottom: 2px solid #2e7d32;
+  max-width: 360px;
+}
+
+
+/* ----- h3（小見出し） ----- */
+h3 {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #5d4037;
+  margin: 0 0 12px 0;
+}
+
+
+/* ----- p（段落） ----- */
+p {
+  margin: 0 0 16px 0;
+  text-align: justify;
+}
+
+
+/* ----- ヘッダー領域（ヒーロー） ----- */
+header {
+  background-color: #1b5e20;
+  color: #ffffff;
+  text-align: center;
+  padding: 64px 20px 56px 20px;
+  border-bottom: 6px solid #ffb300;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 42px;
+  margin: 0 0 12px 0;
+}
+
+
+/* ----- メイン領域：幅を制限して中央寄せ ----- */
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ----- 各セクションの上下余白 ----- */
+section {
+  padding: 56px 0;
+}
+
+
+/* ----- nav（もっと詳しく知る） ----- */
+nav {
+  background-color: #f5efde;
+  padding: 48px 24px;
+  border-top: 1px solid #e6e1ce;
+  border-bottom: 1px solid #e6e1ce;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+nav h2 {
+  font-size: 22px;
+}
+
+
+/* ----- footer（店舗情報） ----- */
+footer {
+  background-color: #5d4037;
+  color: #ffffff;
+  padding: 56px 20px 40px 20px;
+  text-align: center;
+  border-top: 6px solid #ffb300;
+}
+
+footer h2,
+footer h3,
+footer p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 auto 32px auto;
+  padding: 0 0 12px 0;
+  border-bottom: 2px solid #ffe082;
+  max-width: 240px;
+}
+
+footer h3 {
+  color: #ffe082;
+  font-size: 17px;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+  margin: 28px auto 8px auto;
+}
+
+footer p {
+  text-align: center;
+  color: #f5efde;
+  margin: 0 auto 8px auto;
+}
+
+footer a {
+  color: #ffe082;
+  font-weight: 700;
+}

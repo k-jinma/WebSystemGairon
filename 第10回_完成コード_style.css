@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+/* ==========================================
+   第10回 完成コード：色彩設計と背景のスタイリング
+   森のキッチン LP（index.html）用 スタイルシート
+   - 第9回までの「文字装飾」に、「色（カラーコード／RGBA）」と
+     「背景（background-color／background-image）」を追加した状態。
+   - ボックスモデル（margin / padding / border）は第11回、
+     クラス・IDセレクター／リスト装飾は第12回で扱う。
+   ========================================== */
+
+
+/* ----------------------------------------
+   配色設計
+   - ベースカラー（70%）：#fdfcf7（薄いクリーム＝紙のような色）
+   - メインカラー（25%）：#2e7d32（森を連想させる深い緑）
+   - サブカラー　    　：#5d4037（木の温もりを連想させる茶系）
+   - アクセントカラー（5%）：#ffb300（ぬくもりのあるオレンジ＝注目）
+   ---------------------------------------- */
+
+
+/* ----- 全体（body）の基本文字装飾＋ベースカラー ----- */
+body {
+  color: #333;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+
+  /* 第10回追加：ベースカラー（広い面積の70%） */
+  background-color: #fdfcf7;
+}
+
+
+/* ----- ヘッダー領域：メインカラー（緑）で統一 ----- */
+header {
+  /* メインカラーを背景に */
+  background-color: #2e7d32;
+
+  /* 緑背景の上に白系の文字を載せて読みやすくする */
+  color: #fff;
+
+  /* 横方向：中央揃え（ロゴと h1 の表示を整える） */
+  text-align: center;
+}
+
+/* ヘッダー内の h1 だけ、文字色を白に上書きする */
+header h1 {
+  color: #fff;
+}
+
+
+/* ----- h1（キャッチコピー） ----- */
+h1 {
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #2e7d32;
+  line-height: 1.4;
+}
+
+
+/* ----- h2（セクション見出し） ----- */
+h2 {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+  line-height: 1.5;
+}
+
+
+/* ----- h3（小見出し） ----- */
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5d4037;
+  line-height: 1.5;
+}
+
+
+/* ----- p（段落） ----- */
+p {
+  text-align: justify;
+}
+
+
+/* ----- nav（もっと詳しく知る）：薄いベージュで区切る ----- */
+nav {
+  /* ベースカラーより一段だけ濃い、ベージュ系で区切りを表す */
+  background-color: #f5efde;
+}
+
+nav h2 {
+  font-size: 20px;
+  /* nav の中の h2 は緑のまま（背景がベージュなので可読性十分） */
+}
+
+
+/* ----- footer（店舗情報）：サブカラー（茶）で締める ----- */
+footer {
+  /* 茶色背景＋白文字で「ページの締め」感を出す */
+  background-color: #5d4037;
+  color: #fff;
+}
+
+/* footer 内の h2 / h3 は背景が茶色なので白系に上書き */
+footer h2 {
+  color: #fff;
+  font-size: 22px;
+}
+
+footer h3 {
+  color: #fff;
+}
+
+/* footer 内のリンクはアクセントカラー（オレンジ系）で目立たせる */
+footer a {
+  color: #ffe082;
+}
+
+
+/* ----------------------------------------
+   背景画像の例（任意）
+   - 画像が用意できる場合は、ヘッダーの背景画像として
+     「葉っぱのテクスチャ」などをふんわり重ねると雰囲気が出る。
+   - 画像が読み込めない場合に備えて、必ず background-color と
+     セットで指定するのが基本。
+   ---------------------------------------- */
+/*
+header {
+  background-color: #2e7d32;
+  background-image: url(images/bg-leaf.png);
+  background-repeat: repeat;
+  background-position: center top;
+}
+*/

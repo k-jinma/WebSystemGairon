@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+/* ==========================================
+   最終形態 完成コード（第9回〜第12回まで反映）
+   森のキッチン LP（index.html）用 スタイルシート
+   ──────────────────────────────────────────
+   使用範囲（テキスト準拠）
+     第 9回：色／フォント／サイズ／太さ／行間／揃え位置／Webフォント
+     第10回：background-color／background-image／size／position／repeat
+     第11回：width／height／max-width／margin／padding／border
+     第12回：クラス（.name）／ID（#name）／list-style-* 系
+   - 第13回以降の Flexbox／Grid／display／:hover／box-shadow／
+     border-radius／text-shadow などは使用していない。
+   ========================================== */
+
+
+/* ----------------------------------------
+   配色設計
+     ベースカラー（70%）  #fdfcf7   紙のような薄いクリーム
+     カードカラー         #ffffff   メニュー背景に使う白
+     メインカラー（25%）  #2e7d32   森を連想させる深い緑
+     メインカラー（濃）   #1b5e20   ヘッダーの濃い緑
+     サブカラー　         #5d4037   木の温もりの茶系
+     サブカラー（淡）     #f5efde   区切りの薄ベージュ
+     アクセント（5%）     #ff6f00   注目させたいリンク／オレンジ
+     アクセント（淡）     #ffe082   フッターのリンクなど
+     文字色（本文）       #333333
+     文字色（補足）       #666666
+   ---------------------------------------- */
+
+
+/* =========================================================
+   第 9回：基本の文字装飾
+   ========================================================= */
+
+body {
+  margin: 0;                                   /* 第11回：ブラウザ既定の余白を 0 に揃える */
+  color: #333;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  background-color: #fdfcf7;                   /* 第10回：ベースカラー */
+}
+
+h1 {
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.4;
+  text-align: center;
+  color: #2e7d32;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.5;
+  text-align: center;
+  color: #2e7d32;
+  /* 「上0／左右auto／下24px／左右auto」で水平中央寄せ */
+  margin: 0 auto 24px auto;
+  padding: 0 0 12px 0;
+  /* タイトルの下に短い緑のライン */
+  border-bottom: 2px solid #2e7d32;
+  max-width: 360px;
+}
+
+h3 {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #5d4037;
+  margin: 0 0 12px 0;
+}
+
+p {
+  margin: 0 0 16px 0;
+  text-align: justify;
+}
+
+
+/* =========================================================
+   第10回 & 第11回：ヘッダー領域（ヒーロー）
+   - 全幅の緑背景＋大きな上下余白でサイトの「顔」を作る。
+   - 文字色は白に上書きし、メインカラーの上で読みやすくする。
+   ========================================================= */
+
+header {
+  background-color: #1b5e20;                    /* メインカラー（濃いめ） */
+  color: #ffffff;
+  text-align: center;
+  padding: 64px 20px 56px 20px;
+  border-bottom: 6px solid #ffb300;             /* アクセントの帯 */
+}
+
+header .logo {
+  width: 96px;
+  height: auto;
+  margin: 0 0 16px 0;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 42px;
+  margin: 0 0 12px 0;
+}
+
+.catch {
+  color: #ffe082;
+  font-size: 17px;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   第11回：メインの幅を制限し、中央寄せ
+   ========================================================= */
+
+main {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  /* 上下の余白だけでセクションを区切る（罫線は使わない） */
+  padding: 56px 0;
+}
+
+
+/* =========================================================
+   イントロ（紹介文）セクション
+   ========================================================= */
+
+.intro {
+  text-align: center;
+  padding: 56px 0 40px 0;
+}
+
+.intro p {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 16px auto;
+  color: #5d4037;
+}
+
+.intro .lead {
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   第12回：特徴リスト（クラスセレクター＋list-style）
+   ========================================================= */
+
+.feature-list {
+  list-style-type: square;
+  list-style-position: outside;
+  max-width: 520px;
+  margin: 24px auto 0 auto;
+  padding: 24px 24px 24px 48px;
+  background-color: #ffffff;
+  border: 1px solid #e6e1ce;
+  border-left: 6px solid #2e7d32;               /* テーマ色のサイドバー風 */
+  color: #333;
+}
+
+.feature-list li {
+  padding: 6px 0;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   第12回：メニューカード（div でグループ化したまとまりに装飾）
+   ========================================================= */
+
+.menu-card {
+  background-color: #ffffff;
+  border: 1px solid #e6e1ce;
+  padding: 24px;
+  margin: 24px auto;
+  max-width: 560px;
+}
+
+.menu-card h3 {
+  text-align: center;
+  color: #2e7d32;
+  margin: 0 0 16px 0;
+  padding: 0 0 10px 0;
+  border-bottom: 1px dashed #d4c89a;
+}
+
+.menu-photo {
+  width: 100%;
+  height: auto;
+  margin: 0 0 16px 0;
+  border: 1px solid #eee;
+}
+
+.menu-card p {
+  margin: 0;
+  text-align: justify;
+  color: #5d4037;
+}
+
+
+/* =========================================================
+   ご来店の流れ（番号付きリスト）
+   ========================================================= */
+
+.flow-list {
+  list-style-type: decimal;
+  list-style-position: outside;
+  max-width: 480px;
+  margin: 24px auto 0 auto;
+  padding: 24px 24px 24px 56px;
+  background-color: #ffffff;
+  border: 1px solid #e6e1ce;
+}
+
+.flow-list li {
+  padding: 10px 0;
+  font-weight: 700;
+  color: #5d4037;
+}
+
+
+/* =========================================================
+   nav（もっと詳しく知る）
+   - 内部リンク集を「ボタン風カード」で見せる
+   - 「ご予約フォーム」だけ目立たせる（アクセントカラー）
+   ========================================================= */
+
+nav {
+  background-color: #f5efde;
+  padding: 48px 24px;
+  border-top: 1px solid #e6e1ce;
+  border-bottom: 1px solid #e6e1ce;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+nav h2 {
+  font-size: 22px;
+}
+
+.link-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 24px auto 0 auto;
+  max-width: 420px;
+}
+
+/* 1項目を「ボタン風カード」として見せる */
+.link-list li {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d4c89a;
+  border-left: 4px solid #2e7d32;
+  padding: 16px 12px;
+  margin: 0 0 10px 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.link-list li a {
+  color: #2e7d32;
+  text-decoration: none;                        /* 既定の下線を消す */
+}
+
+/* アクセント：「ご予約フォーム」だけ目立たせる（class を li 側に付けて装飾） */
+.link-list .reservation {
+  background-color: #ff6f00;
+  border: 1px solid #b34700;
+  border-left: 4px solid #b34700;
+}
+
+.link-list .reservation a {
+  color: #ffffff;                               /* オレンジ背景の上に白文字 */
+}
+
+
+/* =========================================================
+   SNS セクション
+   ========================================================= */
+
+#sns {
+  text-align: center;
+}
+
+.sns-lead {
+  text-align: center;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.sns-icons {
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+.sns-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 12px;
+  border: 1px solid #e6e1ce;
+  background-color: #ffffff;
+  padding: 8px;
+}
+
+
+/* =========================================================
+   footer（店舗情報）
+   - 全幅のサブカラー（茶）背景＋白文字
+   - main の外にあるので max-width の制約を受けない
+   ========================================================= */
+
+footer {
+  background-color: #5d4037;
+  color: #ffffff;
+  padding: 56px 20px 40px 20px;
+  text-align: center;
+  border-top: 6px solid #ffb300;                /* アクセントの帯（ヘッダーと対称） */
+}
+
+footer h2,
+footer h3,
+footer p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 auto 32px auto;                     /* 中央寄せ＋下余白 */
+  padding: 0 0 12px 0;
+  border-bottom: 2px solid #ffe082;
+  max-width: 240px;
+}
+
+footer h3 {
+  color: #ffe082;
+  font-size: 17px;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+  margin: 28px auto 8px auto;
+}
+
+footer p {
+  text-align: center;
+  color: #f5efde;
+  margin: 0 auto 8px auto;
+}
+
+footer a {
+  color: #ffe082;
+  font-weight: 700;
+}
+
+footer .copyright {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid #6d4c41;
+  font-size: 13px;
+  color: #d7ccc8;
+}
