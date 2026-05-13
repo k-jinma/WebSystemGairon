@@ -45,7 +45,7 @@ header {
 
 /* ヘッダー内の h1 だけ、文字色を白に上書きする */
 header h1 {
-  color: #fff;
+  color: #0d6000;
 }
 
 
@@ -127,11 +127,11 @@ footer a {
    - 画像が読み込めない場合に備えて、必ず background-color と
      セットで指定するのが基本。
    ---------------------------------------- */
-/*
+
 header {
   background-color: #2e7d32;
   background-image: url(images/bg-leaf.png);
   background-repeat: repeat;
   background-position: center top;
 }
-*/
+

@@ -1,79 +1,42 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-/* ==========================================
-   第9回：CSSの基本概念と文字の装飾
-   森のキッチン LP（index.html）用 スタイルシート
-   - 今回は「文字の装飾」までを担当する。
-   - 色彩設計（背景色・配色）、ボックスモデル（余白）、
-     レイアウトは第10回以降で扱う。
-   ========================================== */
-
-
-/* ----- 全体（body）の基本文字装飾 ----- */
 body {
-  /* color：本文の文字色を、真っ黒よりやや柔らかい濃いグレーに */
-  color: #333;
-
-  /* font-family：日本語ゴシック系を優先し、最後に総称フォント sans-serif を指定（フォールバック） */
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-
-  /* font-size：本文の基準サイズを 16px に設定 */
-  font-size: 16px;
-
-  /* line-height：行間を 1.8 倍に設定（読みやすさを優先） */
-  line-height: 1.8;
+    color: #333; /* 柔らかい濃いグレー */
+    font-size: 16px; /* フォントサイズは16px */
+    line-height: 1.8; /* 行間は1.8倍 */
 }
 
-
-/* ----- h1（ページタイトル：キャッチコピー） ----- */
 h1 {
-  /* Webフォント（Google Fonts）を最優先に指定し、丸みのある印象を与える */
-  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
-
-  font-size: 32px;
-  font-weight: bold;
-
-  /* キャッチコピーは短文なので中央揃えにしてもOK */
-  text-align: center;
-
-  color: #2e7d32;  /* 森を連想させる深い緑 */
-  line-height: 1.4;
+      font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 32px; /* フォントサイズは32px */
+    font-weight: bold; /* 文字の太さを太文字にする */
+    text-align: center; /* 文字列を中央揃え  */
+    color: #2e7d32; /* 森を連想させる深い緑 */
+    line-height: 1.4; /* 行間は1.4倍 */
 }
 
-
-/* ----- h2（セクション見出し） ----- */
 h2 {
-  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: #2e7d32;
-  line-height: 1.5;
+font-size: 24px;
+font-weight: bold;
+color: #2e7d32;
+line-height: 1.5;
 }
 
-
-/* ----- h3（メニュー名や所在地などの小見出し） ----- */
 h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #5d4037;  /* 木の温もりを連想させる茶系 */
-  line-height: 1.5;
+font-size: 18px;
+font-weight: bold;
+color: #5d4037; /* 茶系：木の温もり */
+line-height: 1.5;
 }
 
-
-/* ----- p（段落） ----- */
-p {
-  /* 長文は両端揃えにすると、行末がきれいにそろい段落が落ち着く */
-  text-align: justify;
-}
-
-
-/* ----- nav 内の見出しは少し控えめに ----- */
 nav h2 {
-  font-size: 20px;
+font-size: 20px;
 }
 
-
-/* ----- footer 内の見出し ----- */
 footer h2 {
-  font-size: 22px;
+font-size: 22px;
+}
+
+p {
+text-align: justify;
 }
