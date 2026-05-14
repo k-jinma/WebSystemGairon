@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox主要プロパティ実験</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: "Yu Gothic", "Meiryo", sans-serif;
+            background: #f7f8fa;
+            color: #222;
+        }
+
+        h1 {
+            margin: 0 0 16px 0;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #d9dde3;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .control {
+            display: grid;
+            gap: 6px;
+            font-size: 14px;
+        }
+
+        .control label {
+            font-weight: bold;
+        }
+
+        .control select,
+        .control input {
+            font-size: 14px;
+            padding: 6px;
+        }
+
+        .preview {
+            background: #fff;
+            border: 1px solid #d9dde3;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        /* ここにFlexboxのプロパティを反映する */
+        .container {
+            min-height: 180px;
+            border: 2px dashed #93a1b1;
+            padding: 12px;
+            background: #f3f7ff;
+        }
+
+        .item {
+            background: #6abeeb;
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            min-width: 90px;
+            margin-bottom: 4px;
+        }
+
+        .item:nth-child(2) {
+            font-size: 22px;
+        }
+
+        .item:nth-child(3) {
+            font-size: 12px;
+        }
+
+        .note {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #555;
+            font-family: Consolas, "Courier New", monospace;
+            white-space: pre-wrap;
+            background: #eef1f6;
+            border-radius: 6px;
+            padding: 12px 16px;
+        }
+
+        code {
+            background: #eef1f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .desc {
+            font-size: 11px;
+            color: #444;
+            font-weight: normal;
+            margin-top: -2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox 主要プロパティ実験</h1>
+    <p>各プロパティを切り替えて、レイアウトの変化を確認してください。<br>
+       <code>display: flex</code> をOFFにすると、通常のブロック配置に戻ります。</p>
+
+    <section class="panel">
+        <div class="controls">
+            <div class="control">
+                <label>
+                    <input type="checkbox" id="useFlex" checked>
+                    display: flex を有効化
+                </label>
+                <span class="desc">「display: flex」を書くとFlexboxが有効になり、子要素が横並びになる</span>
+            </div>
+
+            <div class="control">
+                <label for="direction">flex-direction</label>
+                <span class="desc">アイテムを「横並び」にするか「縦並び」にするかを決める</span>
+                <select id="direction">
+                    <option value="row">row</option>
+                    <option value="row-reverse">row-reverse</option>
+                    <option value="column">column</option>
+                    <option value="column-reverse">column-reverse</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="wrap">flex-wrap</label>
+                <span class="desc">アイテムがはみ出たとき、次の行に折り返すかそのまま1行に詰め込むかを決める</span>
+                <select id="wrap">
+                    <option value="nowrap">nowrap</option>
+                    <option value="wrap">wrap</option>
+                    <option value="wrap-reverse">wrap-reverse</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="justify">justify-content</label>
+                <span class="desc">並んでいる方向（横なら左右）の位置を調整する</span>
+                <select id="justify">
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="align">align-items</label>
+                <span class="desc">並び方向と垂直（横なら上下）の位置を調整する</span>
+                <select id="align">
+                    <option value="stretch">stretch</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="baseline">baseline</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="gap">gap（px）</label>
+                <span class="desc">アイテムの間の隙間（marginを指定せず、一次で調整できる）</span>
+                <input type="range" id="gap" min="0" max="48" step="2" value="8">
+                <span id="gapValue">8px</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="preview">
+        <div class="container" id="container">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item">C</div>
+            <div class="item">D</div>
+            <div class="item">E</div>
+        </div>
+        <div class="note" id="cssPreview"></div>
+    </section>
+
+    <script>
+        const container = document.getElementById("container");
+        const useFlex = document.getElementById("useFlex");
+        const direction = document.getElementById("direction");
+        const wrap = document.getElementById("wrap");
+        const justify = document.getElementById("justify");
+        const align = document.getElementById("align");
+        const gap = document.getElementById("gap");
+        const gapValue = document.getElementById("gapValue");
+        const cssPreview = document.getElementById("cssPreview");
+
+        function applyFlexSettings() {
+            if (useFlex.checked) {
+                container.style.display = "flex";
+                container.style.flexDirection = direction.value;
+                container.style.flexWrap = wrap.value;
+                container.style.justifyContent = justify.value;
+                container.style.alignItems = align.value;
+                container.style.gap = gap.value + "px";
+            } else {
+                container.style.display = "block";
+                container.style.flexDirection = "";
+                container.style.flexWrap = "";
+                container.style.justifyContent = "";
+                container.style.alignItems = "";
+                container.style.gap = "";
+            }
+
+            gapValue.textContent = gap.value + "px";
+            cssPreview.textContent = useFlex.checked
+                ? ".container {\n"
+                  + "  display: flex;\n"
+                  + "  flex-direction: " + direction.value + ";\n"
+                  + "  flex-wrap: " + wrap.value + ";\n"
+                  + "  justify-content: " + justify.value + ";\n"
+                  + "  align-items: " + align.value + ";\n"
+                  + "  gap: " + gap.value + "px;\n"
+                  + "}"
+                : ".container {\n  /* CSS設定なし */\n  /* ※ ブロックレベル要素（div, p, h1 など）は\n       display: block; が暗黙的に設定されている */\n}";
+        }
+
+        useFlex.addEventListener("change", applyFlexSettings);
+        direction.addEventListener("change", applyFlexSettings);
+        wrap.addEventListener("change", applyFlexSettings);
+        justify.addEventListener("change", applyFlexSettings);
+        align.addEventListener("change", applyFlexSettings);
+        gap.addEventListener("input", applyFlexSettings);
+
+        applyFlexSettings();
+    </script>
+</body>
+</html>
