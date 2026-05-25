@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+/* ========================================
+   第14回 完成時 CSS
+   第13回までの Flexbox に加えて、
+   ・カテゴリー一覧（4列タイル）
+   ・体験一覧（3列タイル）
+   ・人気の植物（2×2タイル）
+   ・フッターメニュー（4列）
+   を CSS Grid で組み上げた完成状態。
+   ※レスポンシブ対応は第15回で扱う。
+   ======================================== */
+
+/* ----- 基本（リセットとベース） ----- */
+body {
+	color: #222;
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+
+/* ----- ヘッダー（Flexbox：第13回で完成済み） ----- */
+.header {
+	padding: 26px 8vw 40px;
+	border-bottom: 1px solid #6abeeb;
+}
+
+.header-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	height: 30px;
+}
+
+.menu {
+	display: flex;
+	gap: 24px;
+	color: #127791;
+	font-size: 16px;
+}
+
+.cart {
+	color: #127791;
+	font-size: 23px;
+}
+
+/* ----- キャッチコピー（Flexbox：column） ----- */
+.catch {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.catch h1 {
+	color: #127791;
+	font-size: 32px;
+	font-weight: 400;
+}
+
+.catch-btn {
+	padding: 13px 40px 17px;
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+	background-color: #16A6CB;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+/* ----- 一覧セクション共通 ----- */
+.list {
+	padding: 60px 8vw;
+}
+
+.list h2 {
+	margin-bottom: 12px;
+	color: #444;
+	font-size: 26px;
+	font-weight: 400;
+}
+
+.list h2 + p {
+	margin-bottom: 28px;
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+
+/* ----- 植物カテゴリー一覧（CSS Grid：4列） ----- */
+.plants {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 1:1:1:1 の4列 */
+	gap: 16px;                              /* タイル間の余白 */
+}
+
+.plants li img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.plants li h3 {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+
+/* ----- 体験一覧（CSS Grid：3列） ----- */
+.list-exp {
+	background-color: #eefbe3;
+}
+
+.exp {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.exp li img {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.exp li h3 {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+
+/* ----- 人気の植物（CSS Grid：2×2タイル＋枠） ----- */
+.frame {
+	border: 1px solid #6abeeb;
+	padding: 40px;
+	border-radius: 10px;
+}
+
+.items {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+}
+
+.items li img {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.items li h3 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.items li .price {
+	margin-top: 4px;
+	font-size: 18px;
+}
+
+
+/* ----- フッター（CSS Grid：4列メニュー） ----- */
+.footer {
+	padding: 60px 8vw;
+	background-color: #f0f9fe;
+	border-top: 1px solid #6abeeb;
+}
+
+.footer-nav {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 32px;
+}
+
+.footer-nav h4 {
+	margin-bottom: 14px;
+	color: #888;
+	font-size: 14px;
+}
+
+.footer-nav ul {
+	display: grid;
+	row-gap: 7px;
+	font-size: 14px;
+}
+
+.copyright {
+	margin-top: 40px;
+	font-size: 12px;
+	color: #555;
+	text-align: right;
+}
