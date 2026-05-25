@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+/* ========================================
+   第13回 開始時 CSS
+   ヘッダー・カテゴリー一覧の文字装飾までを
+   整えただけの状態。Flexbox はまだ使っていない。
+   ここから演習を進めて「横並びレイアウト」を
+   完成させていく。
+   ======================================== */
+
+/* ----- 基本（リセットとベース） ----- */
+body {
+	color: #222;
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+
+
+/* ----- ヘッダー ----- */
+.header {
+	padding: 26px 8vw 40px;
+	border-bottom: 1px solid #6abeeb;
+}
+
+.logo {
+	height: 30px;
+}
+
+.menu {
+	color: #127791;
+}
+
+.cart {
+	color: #127791;
+	font-size: 23px;
+}
+
+/* ----- キャッチコピー ----- */
+.catch h1 {
+	color: #127791;
+	font-size: 32px;
+	font-weight: 400;
+}
+
+.catch-btn {
+	padding: 13px 40px 17px;
+	border: 2px solid #ffffff;
+	border-radius: 4px;
+	background-color: #16A6CB;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+/* ----- 植物カテゴリー一覧 ----- */
+.list {
+	padding: 60px 8vw;
+}
+
+.list h2 {
+	margin-bottom: 12px;
+	color: #444;
+	font-size: 26px;
+	font-weight: 400;
+}
+
+.list h2 + p {
+	margin-bottom: 28px;
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+.plants li img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.plants li h3 {
+	font-size: 16px;
+	font-weight: 500;
+}
