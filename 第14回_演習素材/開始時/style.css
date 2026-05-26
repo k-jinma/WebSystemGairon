@@ -127,3 +127,34 @@ img {
 	font-size: 16px;
 	font-weight: 500;
 }
+
+/* ----- 人気の植物（CSS Grid：2×2 タイル＋枠） ----- */
+.frame {
+  border: 1px solid #6abeeb;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 列 */
+  gap: 24px;
+}
+
+.items li img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.items li h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.items li .price {
+  margin-top: 4px;
+  font-size: 18px;
+}
