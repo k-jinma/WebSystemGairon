@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/* ===== 基本 ===== */
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container {
+	width: 84%;
+	margin: 0 auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+
+/* ===== ヘッダー ===== */
+/* TODO: Step 4 で .header .container と .site に Flexbox を当てる */
+.header .container {
+	height: 74px;
+}
+
+.site img {
+	width: 42px;
+	margin-right: 10px;
+}
+
+.site .corp {
+	color: #333333;
+	font-size: 12px;
+	font-weight: 900;
+	line-height: 1.4;
+}
+
+.site .desc {
+	color: #707F89;
+	font-size: 10px;
+	line-height: 1.4;
+}
+
+.nav ul {
+	list-style: none;
+}
+
+
+/* ===== サービス（モバイル：縦並び） ===== */
+.service {
+	padding: 67px 0;
+	text-align: center;
+}
+
+.service h2 {
+	display: inline-block;
+	margin-bottom: 16px;
+	padding-bottom: 9px;
+	border-bottom: dotted 2px currentColor;
+	font-size: 24px;
+	color: #2E5180;
+}
+
+.service h2 + p {
+	color: #2E5180;
+	font-size: 16px;
+}
+
+.details {
+	margin-top: 53px;
+	color: #333333;
+}
+
+.detail:not(:last-child) {
+	margin-bottom: 67px;
+}
+
+.detail h3 {
+	margin-bottom: 17px;
+	font-size: 20px;
+	line-height: 1.75;
+}
+
+.detail p {
+	max-width: 264px;
+	margin: 0 auto 25px;
+	font-size: 12px;
+	line-height: 2;
+}
+
+.detail figure {
+	height: 246px;
+	margin-bottom: 22px;
+	background-position: center;
+	background-size: cover;
+}
+
+.detail.office    figure { background-image: url(img/office.jpg); }
+.detail.manage    figure { background-image: url(img/manage.jpg); }
+.detail.research  figure { background-image: url(img/research.jpg); }
+
+
+/* ===== ボタン（サービスカード内のみ） ===== */
+.detail .btn {
+	display: block;
+	width: 208px;
+	margin: 0 auto;
+	padding: 11px 11px 13px;
+	box-sizing: border-box;
+	border: solid 2px currentColor;
+	border-radius: 24px;
+	color: #2E5180;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* TODO: Step 5 で @media (min-width: 900px) を末尾に追加する */

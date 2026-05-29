@@ -106,13 +106,9 @@ img {
 }
 
 .plants {
-	display: flex;       /* カードを横並び */
-	flex-wrap: wrap;     /* 親要素を超えたら折り返し */
+	display: grid;       /* カードを横並び */
+	grid-template-columns: repeat(4, 1fr);
 	gap: 16px;           /* カード同士の余白 */
-}
-
-.plants li {
-	flex: 1 1 220px;     /* 最低 220px・残り余白は均等に分配 */
 }
 
 .plants li img {
@@ -157,4 +153,27 @@ img {
 .items li .price {
   margin-top: 4px;
   font-size: 18px;
+}
+
+.list-exp{
+	background-color: #eefbe3;
+}
+
+.exp{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.exp li img {
+	width: 100%; /* 画像の幅を100%にする */
+	height: 220px; /* 画像の高さを 220px に固定 */
+	object-fit: cover; /* 画像を縦横比を保ち、はみ出る部分を切り取る */
+	border-radius: 100px; /* 画像の四隅を 10px の半径で丸くする */
+	margin-bottom: 8px; /* 画像の下に 8px の余白を空ける */
+}
+
+.exp li h3 {
+	font-size: 16px; /* 見出しの文字サイズを 16px にする */
+	font-weight: 500; /* 文字の太さを 500（やや太め）にする */
 }
