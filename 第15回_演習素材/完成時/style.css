@@ -128,40 +128,12 @@ a:hover {
 
 /* ===== メディアクエリ：PC（幅 900px 以上） ===== */
 @media (min-width: 900px) {
-	.header .container {
-		height: 100px;
-	}
-
-	.site img {
-		width: 59px;
-		margin-right: 18px;
-	}
-
-	.site .corp {
-		font-size: 20px;
-	}
-
-	.site .desc {
-		font-size: 12px;
-	}
-
-	.nav ul {
-		display: flex;
-		align-items: center;
-		gap: 23px;
-	}
 
 	.details {
 		display: flex;
-		gap: 3.22%;
+		gap: 3%;
+		justify-content: space-between; 
 		margin-top: 75px;
 	}
 
-	.detail {
-		flex: 1;
-	}
-
-	.detail:not(:last-child) {
-		margin-bottom: 0;
-	}
 }
