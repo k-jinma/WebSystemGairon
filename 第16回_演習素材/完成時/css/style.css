@@ -2,20 +2,20 @@
 
 /* 共通部分
 ------------------------------- */
-html {
+/* html {
     font-size: 100%;
-}
-body{
+} */
+/* body{
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
     line-height: 1.7;
     color: #432;
-}
+} */
 a {
     text-decoration: none;
 }
-img {
+/* img {
     max-width: 100%;
-}
+} */
 
 /* レイアウト */
 .wrapper {
@@ -30,14 +30,14 @@ img {
 /* 見出し */
 .font-english {
     font-family: 'Philosopher', sans-serif;
-    font-weight: normal;
+    /* font-weight: normal; */
 }
 
 /* ヘッダー
 ------------------------------- */
-.page-header {
+/* .page-header {
     padding-top: .5rem;
-}
+} */
 .logo {
     width: 210px;
 }
