@@ -1,56 +1,29 @@
 @charset "UTF-8";
 
-/* 共通部分
-------------------------------- */
-/* html {
-    font-size: 100%;
-} */
-/* body{
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
-    line-height: 1.7;
-    color: #432;
-} */
-a {
-    text-decoration: none;
-}
-/* img {
-    max-width: 100%;
-} */
-
-/* レイアウト */
-.wrapper {
-    max-width: 1120px;
-    margin: auto;
-    padding: 0 1.5rem;
-}
-.align-center {
-    text-align: center;
-}
-
 /* 見出し */
-.font-english {
+.font{
     font-family: 'Philosopher', sans-serif;
-    /* font-weight: normal; */
 }
 
 /* ヘッダー
 ------------------------------- */
-/* .page-header {
-    padding-top: .5rem;
-} */
 .logo {
     width: 210px;
 }
-.main-nav {
+
+header {
+    text-align: center;
+}
+
+.nav {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
     font-size: 1.5rem;
     list-style: none;
 }
-.main-nav a {
+
+.nav a {
+    text-decoration: none; 
     color: #432;
-}
-.main-nav a:hover {
-    color: #0bd;
 }
