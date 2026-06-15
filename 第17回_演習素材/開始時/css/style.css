@@ -28,3 +28,33 @@ header {
     text-decoration: none; 
     color: #432;
 }
+
+h2{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.cover{
+    background-image: url(../images/cover-home-s.webp);
+    background-size: cover; /* 比率を保ったまま拡大 */
+    height: 800px; /* 高さを800pxにする */
+    background-position: center bottom; /* 画像の基準点（中心点）を中央・下にする */
+}
+
+.about {
+    max-width: 736px; /* エリアの最大幅を設定 */
+    padding: 0 1.5rem; /* 横の余白を追加 */
+    margin: 3rem auto 0; /* 上にスペースを追加し、中央寄せ */
+}
+.about p {
+    margin-top: 3rem; /* 1段落目の上にスペースを追加 */
+    margin-bottom: 3rem; /* 1段落目の下にスペースを追加 */
+    line-height: 1.7; /* 行間を広げる */
+    color: #432; /* テキストの色を変更 */
+}
+
+.btn:hover {
+    background-color: #09a; /* マウスを乗せたとき少し濃い色に */
+}

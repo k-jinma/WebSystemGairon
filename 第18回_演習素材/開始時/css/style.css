@@ -70,5 +70,27 @@ header {
     border-radius: 8px;             /* 角の丸み */
     padding: .75rem 1.5rem;         /* 上下 .75rem、左右 1.5rem */
     text-decoration: none;         /* リンクの下線を消す */
+    transition: .5s;
+}
 
+.btn:hover {
+    background-color: #09a; /* マウスを乗せたとき少し濃い色に */
+}
+
+footer {
+    background-image: url(../images/footer-l.webp); /* 背景画像を指定 */
+    background-size: cover; /* 背景画像をエリア全体に拡大して表示 */
+    background-position: center; /* 背景画像の位置を中央に設定 */
+    padding-top: 12rem; /* 上に余白を追加する */
+}
+
+.info {
+    width: 100%; /* エリアの幅を100%に設定 */
+    max-width: 544px; /* エリアの最大幅を設定 */
+    margin: 0 auto; /* エリアを中央寄せ */
+    padding: 0 1.5rem; /* 横の余白を追加 */
+}
+.info th, td {
+    border-bottom: 1px solid #c9c2bc;
+    padding: 1rem 0; /* 1remとは、16pxのこと。上下に1remの余白を追加 */
 }
