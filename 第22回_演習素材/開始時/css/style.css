@@ -199,7 +199,6 @@ img {
 /* .sidebar {
     width: 22%;
 } */
-
 .sidebar .heading-medium {
     font-size: 1.5rem;
     text-align: center;
@@ -266,19 +265,4 @@ img {
     .info th {
         padding-left: 2.5rem;
     }
-
-    /* NEWS：ここで初めて2カラムに切り替える */
-    .news-contents {
-        display: flex;                  /* 広い画面でだけ横並び */
-        justify-content: space-between;
-    }
-    .post {
-        width: 70%;                     /* 記事は広めに */
-    }
-    .sidebar {
-        width: 22%;                     /* サイドバーは細め */
-    }
-
-
-    
 }
