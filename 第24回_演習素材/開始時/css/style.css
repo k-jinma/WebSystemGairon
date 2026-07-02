@@ -294,11 +294,4 @@ img {
     .info th {
         padding-left: 2.5rem;
     }
-
-    .grid {
-        display: grid;      /*グリッドレイアウトにする */
-        gap: 3rem 2rem;     /* タイルのすき間：行3rem・列2rem */
-        grid-template-columns: repeat(3, 1fr); /* 同じ幅(1fr)で3列にする */
-    }
-
 }
