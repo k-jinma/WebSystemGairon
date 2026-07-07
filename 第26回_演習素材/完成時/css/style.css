@@ -210,52 +210,18 @@ img {
 }
 
 /* CONTACT（お問い合わせページ）
+   ↓ 店舗情報・地図・SNSのCSSは、この下に演習で追加していきます ↓
 ------------------------------- */
 .cover-contact {
     background-image: url(../images/cover-contact-s.webp);
 }
 
-/* 地図・動画（iframe）を親の幅いっぱいにのばす */
-iframe {
+iframe{
     width: 100%;
 }
 
-/* 店舗情報＋地図 */
-.location {
-    margin-bottom: 3.5rem;
-}
-.location-info {
-    margin-bottom: 2rem;
-}
-.location-info .info {
-    padding: 0;
-}
-
-/* メールでのお問い合わせ */
-.email {
-    max-width: 916px;
-    background-color: #faf7f0;
-    border-radius: 48px;
-    padding: 1.5rem 2.5rem 2.5rem;
-    margin: 0 auto 2rem;
-}
-.email p {
-    margin: 1rem 0 2rem;
-}
-
-/* SNS */
-.sns-item {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-.sns-item .heading-medium {
-    margin-bottom: .5rem;
-}
-.sns-youtube {
-    aspect-ratio: 16/9;
-}
-.sns-youtube iframe {
-    height: 100%;
+.location-map {
+    margin: 3rem auto; /* 説明：地図の上下に余白をつける。左右はautoで中央寄せ */
 }
 
 
