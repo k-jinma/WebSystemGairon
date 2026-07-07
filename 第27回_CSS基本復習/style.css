@@ -1,0 +1,9 @@
+.mytable {
+  border-collapse: collapse; /* ① 線のすき間をなくす */
+  font-size: 14px;           /* ② 文字の大きさ */
+}
+
+.mytable th, .mytable td {
+  border-bottom: 1px solid #ccc; /* ③ 下側だけに薄いグレーの線を引く */
+  padding: 10px;                 /* ④ セルのなかの余白（上下左右） */
+}
