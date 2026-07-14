@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+}
+
+/* ナビ全体を横一列に（第13回 Flexbox の復習） */
+nav {
+    display: flex;              /* 横一列に並べる（第13回） */
+    justify-content: center;    /* 横方向の中央ぞろえ */
+    align-items: center;        /* 縦方向の中央ぞろえ */
+    gap: 1.5rem;                /* アイコンと文字の間隔をあける */
+}
+
+/* アイコンとロゴの大きさをそろえる */
+nav img {
+    width: 44px;
+}
+.logo img {
+    width: 200px;
+}
+
+/* 文字まわりを整える */
+nav a {
+    text-align: center;          /* アイコンと文字を中央ぞろえに（第9回） */
+    text-decoration: none;       /* リンクの下線を消す（第9回） */
+    color: #333;
+    font-size: .75rem;
+}
+nav p {
+    margin: 0;                   /* 段落の余白を消して文字をアイコンに寄せる（第11回） */
+}
+nav a:hover p {
+    color: #ff0033;              /* マウスを乗せると文字が赤に（第18回） */
+}
